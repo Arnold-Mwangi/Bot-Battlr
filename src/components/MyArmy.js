@@ -23,31 +23,26 @@ export default function MyArmy() {
 
     return (
         <>
-            <div className="col-md-3 ">
+            <div className="col-md-12">
                 <h4>My army</h4>
-                {MyArmyBots.map((item) => (
-                    <div key={item.id} className="card m-2  text-white" style={{ width: '18rem' }}>
-                        <img src={item.avatar_url} className="card-img" alt={item.name} />
-                        <div className="card-img-overlay">
-                            <p className="card-text">{item.name}</p>
-                            <p className="card-text">{item.catchphrase}</p>
-
-                            <div class="list-group list-group-flush bg-transparent">
-                                <h4 class="list-group-item">Last Updates</h4>
-                                <p className=" list-group-item">
-                                    Date: {formatDate(item.updated_at)}
-                                </p>
-
-                                <p className="list-group-item">
-                                    Time: {formatTime(item.updated_at)}
-                                </p>
-
+                <div className="row d-flex justify-content-start">
+                    {MyArmyBots.map((item) => (
+                        <div key={item.id} className="col-md-4">
+                            <div className="card m-2 text-white bg-dark" style={{ borderRadius: '10px', overflow: 'hidden' }}>
+                                <img src={item.avatar_url} className="card-img" alt={item.name} style={{ height: '200px', objectFit: 'cover' }} />
+                                <div className="card-body">
+                                    <h5 className="card-title">{item.name}</h5>
+                                </div>
+                                <div className="card-footer bg-white border-top-0">
+                                    <p className="card-text text-success">{item.catchphrase}</p>
+                                    <p className="card-text text-muted mb-0">Last Updated:</p>
+                                    <p className="card-text text-muted">Date: {formatDate(item.updated_at)}</p>
+                                    <p className="card-text text-muted">Time: {formatTime(item.updated_at)}</p>
+                                </div>
                             </div>
-
-
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
 
 

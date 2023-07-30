@@ -5,25 +5,25 @@ import '../CSS/styles.css'
 
 export default function BotCollection() {
 
-    const { Bots, MyArmyBots, showAlert, dispatch } = useContext(AppContext)
+    const { Bots, showAlert, dispatch } = useContext(AppContext)
 
 
     const toastRef = useRef(null)
 
 
 
-    const handleAddToMyArmy = (item) => {
+    // const handleAddToMyArmy = (item) => {
 
-        // const isInBot = MyArmyBots.find((bot) => bot.id === item.id)
+    //     // const isInBot = MyArmyBots.find((bot) => bot.id === item.id)
 
-        // if (!isInBot) {
-        //     dispatch({ type: "ADD_TO_ARMY", payload: item })
-        // } else {
-        //     dispatch({ type: 'SET_SHOW_ALERT', payload: true })
+    //     // if (!isInBot) {
+    //     //     dispatch({ type: "ADD_TO_ARMY", payload: item })
+    //     // } else {
+    //     //     dispatch({ type: 'SET_SHOW_ALERT', payload: true })
 
 
-        // }
-    };
+    //     // }
+    // };
     const handleShowDetails = (item) => {
         dispatch({ type: 'SHOW_BOT_DETAILS', payload: item });
 
@@ -45,22 +45,44 @@ export default function BotCollection() {
 
     return (
         <>
-            <div className='col-md-5'>
-
+            <div
+                className="col-md-9 h-100 mt-1"
+                style={{
+                    overflowY: 'auto', // Add vertical scroll if the content overflows
+                    maxHeight: '100vh', // Set the maximum height of the container
+                }}
+            >
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark flex-md-column">
-                    <div className="navbar-nav flex-column">
+                    <div className="navbar-nav flex-column" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0px' }}>
                         {Bots.map((item) => (
-                            <>
-                                <p key={item.id} className="nav-link" activeClassName="active" onClick={() => handleShowDetails(item)} style={{ color: 'white', border: '1px', borderColor: 'white', display: 'flex', alignItems: 'center' }}>
-                                    <img src={item.avatar_url} className="rounded-circle me-2" alt={item.name} style={{ width: '40px', height: '40px' }} />
-                                    {item.name}
-                                </p>
-                                
-                            </>
+                            <p
+                                key={item.id}
+                                className="nav-link"
+                                activeClassName="active"
+                                onClick={() => handleShowDetails(item)}
+                                style={{
+                                    color: 'white',
+                                    borderBottom: '1px solid white', // Add bottom border
+                                    borderLeft: '1px solid white',   // Add left border
+                                    borderRight: '1px solid white',  // Add right border
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    marginBottom: '5px', // Add some space between the paragraphs
+                                    width: '100%', // Ensure the paragraphs fit within the grid columns
+                                    paddingLeft: '5px', // Add left padding for better spacing
+                                }}
+                            >
+                                <img
+                                    src={item.avatar_url}
+                                    className="rounded-circle me-2"
+                                    alt={item.name}
+                                    style={{ width: '40px', height: '40px' }}
+                                />
+                                {item.name}
+                            </p>
                         ))}
                     </div>
                 </nav>
-
 
                 <div
                     ref={toastRef}
