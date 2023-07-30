@@ -1,48 +1,52 @@
-import {createContext, useReducer, useEffect} from 'react'
+import { createContext, useReducer, useEffect } from 'react'
 import MyArmy from './components/MyArmy'
 import BotCollection from './components/BotCollection'
 import axios from 'axios'
 
 export const AppContext = createContext([])
 
-const botReducer = (state, action) =>{
+const botReducer = (state, action) => {
     switch (action.type) {
         case "SET_BOTS":
-            return {...state, Bots: action.payload}
-            
+            return { ...state, Bots: action.payload }
+
         case "ADD_TO_ARMY":
-            return {...state, MyArmyBots:[...state.MyArmyBots, action.payload]}
-        
-            case "SET_SHOW_ALERT":
-                return {...state, showAlert: action.payload}
-    
+            return { ...state, MyArmyBots: [...state.MyArmyBots, action.payload] }
+
+        case "SET_SHOW_ALERT":
+            return { ...state, showAlert: action.payload }
+
         default:
             return state
     }
 }
 
-export default function BotContext(){
+export default function BotContext() {
 
-    const [state, dispatch] = useReducer(botReducer, {Bots: [], MyArmyBots: [], showAlert: false});
+    const [state, dispatch] = useReducer(botReducer, { Bots: [], MyArmyBots: [], showAlert: false });
 
-    useEffect(()=>{
+    useEffect(() => {
         axios
-        .get("http://localhost:40001/bots")
-        .then(res=>{
-            dispatch({type: "SET_BOTS", payload: res.data})
-            // setBots(res.data)
-            console.log("data fetched");
-        })
+            .get("http://localhost:40001/bots")
+            .then(res => {
+                dispatch({ type: "SET_BOTS", payload: res.data })
+                // setBots(res.data)
+                console.log("data fetched");
+            })
     }, [])
-   
 
-    return(
-        <AppContext.Provider 
-        value ={{...state, dispatch}}
+
+    return (
+        <AppContext.Provider
+            value={{ ...state, dispatch }}
         >
-             <MyArmy />
-            <BotCollection />
-           
+            <div className="container mt-4">
+                <div className="row">                   
+                    <BotCollection />
+                    <MyArmy />
+                </div>
+            </div>
+
         </AppContext.Provider>
     )
 }
