@@ -1,6 +1,9 @@
 import { createContext, useReducer, useEffect } from 'react'
 import MyArmy from './components/MyArmy'
 import BotCollection from './components/BotCollection'
+import BotDetails from './components/BotDetails'
+import Header from './components/Header'
+
 import axios from 'axios'
 
 export const AppContext = createContext([])
@@ -40,9 +43,11 @@ export default function BotContext() {
         <AppContext.Provider
             value={{ ...state, dispatch }}
         >
-            <div className="container mt-4">
+             <Header />
+            <div className="container-fluid" style={{ margin: 0, padding: 0 }}>
                 <div className="row">                   
                     <BotCollection />
+                    <BotDetails />
                     <MyArmy />
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef } from 'react'
 import { AppContext } from '../BotContext'
 
+
 export default function BotCollection() {
 
     const { Bots, MyArmyBots, showAlert, dispatch } = useContext(AppContext)
@@ -38,7 +39,18 @@ export default function BotCollection() {
 
     return (
         <>
-            <div className='col-md-4'>
+            <div className='col-md-3'>
+               
+
+                {Bots.map((item) => (
+                    <div key={item.id} className="card m-2" style={{ width: '18rem' }} onClick={() => handleAddToMyArmy(item)}>
+                        <div className="card-body">
+                            <h5 className="card-title">{item.name}</h5>
+
+                        </div>
+                    </div>
+                ))}
+
                 <div
                     ref={toastRef}
                     className={`toast position-fixed top-0 start-50 translate-middle-x ${showAlert ? 'show' : ''
@@ -60,15 +72,6 @@ export default function BotCollection() {
                     </div>
                     <div className="toast-body">This bot is already in the Army.</div>
                 </div>
-                {Bots.map((item) => (
-                    <div key={item.id} className="card m-2" style={{ width: '18rem' }} onClick={() => handleAddToMyArmy(item)}>
-                        <img src={item.avatar_url} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                            <h5 className="card-title">{item.name}</h5>
-
-                        </div>
-                    </div>
-                ))}
             </div>
 
         </>

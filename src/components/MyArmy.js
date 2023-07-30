@@ -23,8 +23,8 @@ export default function MyArmy() {
 
     return (
         <>
-            <div className="col-md-4">
-                <h1>My army</h1>
+            <div className="col-md-3 ">
+                <h4>My army</h4>
                 {MyArmyBots.map((item) => (
                     <div key={item.id} className="card m-2  text-white" style={{ width: '18rem' }}>
                         <img src={item.avatar_url} className="card-img" alt={item.name} />
