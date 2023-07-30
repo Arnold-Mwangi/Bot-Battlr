@@ -1,10 +1,12 @@
 import { useContext, useEffect, useRef } from 'react'
 import { AppContext } from '../BotContext'
+import '../CSS/styles.css'
 
 
 export default function BotCollection() {
 
     const { Bots, MyArmyBots, showAlert, dispatch } = useContext(AppContext)
+
 
     const toastRef = useRef(null)
 
@@ -12,16 +14,20 @@ export default function BotCollection() {
 
     const handleAddToMyArmy = (item) => {
 
-        const isInBot = MyArmyBots.find((bot) => bot.id === item.id)
+        // const isInBot = MyArmyBots.find((bot) => bot.id === item.id)
 
-        if (!isInBot) {
-            dispatch({ type: "ADD_TO_ARMY", payload: item })
-        } else {
-            dispatch({ type: 'SET_SHOW_ALERT', payload: true })
+        // if (!isInBot) {
+        //     dispatch({ type: "ADD_TO_ARMY", payload: item })
+        // } else {
+        //     dispatch({ type: 'SET_SHOW_ALERT', payload: true })
 
 
-        }
+        // }
     };
+    const handleShowDetails = (item) => {
+        dispatch({ type: 'SHOW_BOT_DETAILS', payload: item });
+
+    }
 
     useEffect(() => {
         if (showAlert) {
@@ -39,21 +45,26 @@ export default function BotCollection() {
 
     return (
         <>
-            <div className='col-md-3'>
-               
+            <div className='col-md-5'>
 
-                {Bots.map((item) => (
-                    <div key={item.id} className="card m-2" style={{ width: '18rem' }} onClick={() => handleAddToMyArmy(item)}>
-                        <div className="card-body">
-                            <h5 className="card-title">{item.name}</h5>
-
-                        </div>
+                <nav className="navbar navbar-expand-md navbar-dark bg-dark flex-md-column">
+                    <div className="navbar-nav flex-column">
+                        {Bots.map((item) => (
+                            <>
+                                <p key={item.id} className="nav-link" activeClassName="active" onClick={() => handleShowDetails(item)} style={{ color: 'white', border: '1px', borderColor: 'white', display: 'flex', alignItems: 'center' }}>
+                                    <img src={item.avatar_url} className="rounded-circle me-2" alt={item.name} style={{ width: '40px', height: '40px' }} />
+                                    {item.name}
+                                </p>
+                                
+                            </>
+                        ))}
                     </div>
-                ))}
+                </nav>
+
 
                 <div
                     ref={toastRef}
-                    className={`toast position-fixed top-0 start-50 translate-middle-x ${showAlert ? 'show' : ''
+                    className={`toast position-fixed top-0 bg-warning start-50 translate-middle-x ${showAlert ? 'show' : ''
                         }`}
                     role="alert"
                     aria-live="assertive"
