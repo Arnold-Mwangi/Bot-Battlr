@@ -37,7 +37,7 @@ export default function BotContext() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:40001/bots")
+            .get("https://bots-lab.onrender.com/bots")
             .then(res => {
                 dispatch({ type: "SET_BOTS", payload: res.data })
                 // setBots(res.data)

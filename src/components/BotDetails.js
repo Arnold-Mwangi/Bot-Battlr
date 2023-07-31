@@ -34,7 +34,7 @@ export default function BotDetails() {
     const handleDischarge = (botDetails) => {
 
         //delete from server
-        axios.delete(`http://localhost:40001/bots/${botDetails.id}`)
+        axios.delete(`https://bots-lab.onrender.com/bots/${botDetails.id}`)
 
         //delete from Army squad
 
