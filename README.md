@@ -20,13 +20,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-# View of the homepage onload
-![Uploading Screenshot from 2023-07-31 00-28-00.png…]()
+#View of the homepage onload
+![Screenshot from 2023-07-31, 00-28-09](https://github.com/Arnold-Mwangi/Bot-Battlr/assets/78974739/883cbc28-74a7-4bee-959a-dc74bb1a54a2)
 
-# Theweb app allows a user to add a bot to my Army
-![Uploading Screenshot from 2023-07-31 22-14-57.png…]()
+# The web app allows a user to add a bot to my Army Collection
+
+![Screenshot from 2023-07-31 22-16-48](https://github.com/Arnold-Mwangi/Bot-Battlr/assets/78974739/a9fdc24a-f789-4fec-abcf-7c993d082003)
+
 
 The web also allows one to discharge a Bot completely from the database
 
-![Uploading Screenshot from 2023-07-31 22-16-48.png…]()
+![Screenshot from 2023-07-31 22-16-48](https://github.com/Arnold-Mwangi/Bot-Battlr/assets/78974739/e67a49d6-c987-4fad-ad6f-a4e603df5a72)
+
 
