@@ -25,7 +25,8 @@ You may also see any lint errors in the console.
 
 # The web app allows a user to add a bot to my Army Collection
 
-![Screenshot from 2023-07-31 22-16-48](https://github.com/Arnold-Mwangi/Bot-Battlr/assets/78974739/a9fdc24a-f789-4fec-abcf-7c993d082003)
+![Screenshot from 2023-08-01 03-50-47](https://github.com/Arnold-Mwangi/Bot-Battlr/assets/78974739/cf63f391-4a2e-40a2-b765-d1a166e175c6)
+
 
 
 The web also allows one to discharge a Bot completely from the database
