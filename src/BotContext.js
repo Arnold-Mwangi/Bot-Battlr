@@ -16,8 +16,8 @@ const botReducer = (state, action) => {
         case "ADD_TO_ARMY":
             return { ...state, MyArmyBots: [...state.MyArmyBots, action.payload] }
 
-        case "REMOVE_FROM_ARMY":
-            return { ...state, MyArmyBots: state.MyArmyBots.filter(bot => bot.id !== action.payload.id) };
+            case "REMOVE_FROM_ARMY":
+                return { ...state, MyArmyBots: state.MyArmyBots.filter(bot => bot.id !== action.payload.id)};
 
         case "SET_SHOW_ALERT":
             return { ...state, showAlert: action.payload }
@@ -53,31 +53,31 @@ export default function BotContext() {
 
     return (
         <AppContext.Provider value={{ ...state, dispatch }}>
-            <Header />
-            <div className="container-fluid" style={{ margin: 0, padding: 0 }}>
-                <div className="row">
-                    {/* BotCollection as sidebar */}
-                    <div className="col-md-3">
-                        <BotCollection />
-                    </div>
-
-                    {/* BotDetails and MyArmy stacked on top of each other */}
-                    <div className="col-md-9">
-                        <div className="row">
-                            <div className="col-md-12 position-sticky top-0">
-                                <BotDetails />
-
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md-12">
-                                <MyArmy />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <Header />
+        <div className="container-fluid" style={{ margin: 0, padding: 0 }}>
+          <div className="row">
+            {/* BotCollection as sidebar */}
+            <div className="col-md-3">
+              <BotCollection />
             </div>
-        </AppContext.Provider>
-
+      
+            {/* BotDetails and MyArmy stacked on top of each other */}
+            <div className="col-md-9">
+              <div className="column">
+                <div className="col-md-12 position-sticky top-0">
+                  <BotDetails />
+                  <MyArmy />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-12 position-sticky top-0">
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </AppContext.Provider>
+      
     )
 }

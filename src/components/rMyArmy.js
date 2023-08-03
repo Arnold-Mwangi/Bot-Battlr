@@ -31,15 +31,19 @@ export default function MyArmy() {
                         <div className="card-img-overlay">
                             <p className="card-text">{item.name}</p>
                             <p className="card-text">{item.catchphrase}</p>
-                            <h4 class="card-text">Last Updates</h4>
-                            <p className=" card-text">
+
+                            <div class="list-group list-group-flush bg-transparent">
+                                <h4 class="list-group-item">Last Updates</h4>
+                                <p className=" list-group-item">
                                     Date: {formatDate(item.updated_at)}
                                 </p>
-                                <p className="card-text">
+
+                                <p className="list-group-item">
                                     Time: {formatTime(item.updated_at)}
                                 </p>
 
-                            
+                            </div>
+
 
                         </div>
                     </div>

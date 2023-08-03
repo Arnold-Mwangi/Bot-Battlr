@@ -10,20 +10,18 @@ export default function BotCollection() {
 
     const toastRef = useRef(null)
 
+    // const handleAddToMyArmy = (item) => {
+
+    //     // const isInBot = MyArmyBots.find((bot) => bot.id === item.id)
+
+    //     // if (!isInBot) {
+    //     //     dispatch({ type: "ADD_TO_ARMY", payload: item })
+    //     // } else {
+    //     //     dispatch({ type: 'SET_SHOW_ALERT', payload: true })
 
 
-    const handleAddToMyArmy = (item) => {
-
-        // const isInBot = MyArmyBots.find((bot) => bot.id === item.id)
-
-        // if (!isInBot) {
-        //     dispatch({ type: "ADD_TO_ARMY", payload: item })
-        // } else {
-        //     dispatch({ type: 'SET_SHOW_ALERT', payload: true })
-
-
-        // }
-    };
+    //     // }
+    // };
     const handleShowDetails = (item) => {
         dispatch({ type: 'SHOW_BOT_DETAILS', payload: item });
 
@@ -45,19 +43,35 @@ export default function BotCollection() {
 
     return (
         <>
-            <div className='col-md-5'>
-
-                <nav className="navbar navbar-expand-md navbar-dark bg-dark flex-md-column">
-                    <div className="navbar-nav flex-column">
-                        {Bots.map((item) => (
-                            <p key={item.id} className="nav-link" activeClassName="active"  onClick={()=>handleShowDetails (item)} style={{ color: 'white' }}>
-                                <img src={item.avatar_url} className="card-img-top" alt="..." />
-                                {item.name}</p>
-                                
-                            
-                        ))}
+<div className='col-md-9'>
+    <nav className="navbar navbar-expand-md navbar-dark bg-dark flex-md-column" style={{ height: '100vh', overflowY: 'auto', position: 'sticky', top: 0 }}>
+        <div className="navbar-nav flex-column">
+            {Bots.map((item, index) => (
+                // Wrap every two items in a Bootstrap row
+                index % 2 === 0 ? (
+                    <div key={item.id} className="row border-bottom mb-2">
+                        <div className="col-md-6" onClick={() => handleShowDetails(item)}>
+                            <img src={item.avatar_url} className="card-img-top" alt="..." />
+                            {item.name}
+                        </div>
+                        {/* Check if there's a second item to display */}
+                        {Bots[index + 1] && (
+                            <div className="col-md-6" onClick={() => handleShowDetails(Bots[index + 1])}>
+                                <img src={Bots[index + 1].avatar_url} className="card-img-top" alt="..." />
+                                {Bots[index + 1].name}
+                            </div>
+                        )}
                     </div>
-                </nav>
+                ) : null
+            ))}
+        </div>
+    </nav>
+
+
+
+
+
+
 
                 <div
                     ref={toastRef}

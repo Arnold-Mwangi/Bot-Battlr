@@ -6,11 +6,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   background-image: url("https://w0.peakpx.com/wallpaper/35/797/HD-wallpaper-space-cartoon-background-planets-creative-art-space-cartoon-space-background.jpg");
   background-repeat: no-repeat;
   background-size:cover;
 
  
+
 }
 
 code {

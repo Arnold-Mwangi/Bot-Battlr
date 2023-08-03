@@ -23,29 +23,31 @@ export default function MyArmy() {
 
     return (
         <>
-            <div className="col-md-12">
-                <h4>My army</h4>
-                <div className="row d-flex justify-content-start">
-                    {MyArmyBots.map((item) => (
-                        <div key={item.id} className="col-md-4">
-                            <div className="card m-2 text-white bg-dark" style={{ borderRadius: '10px', overflow: 'hidden' }}>
-                                <img src={item.avatar_url} className="card-img" alt={item.name} style={{ height: '200px', objectFit: 'cover' }} />
-                                <div className="card-body">
-                                    <h5 className="card-title">{item.name}</h5>
-                                </div>
-                                <div className="card-footer bg-white border-top-0">
-                                    <p className="card-text text-success">{item.catchphrase}</p>
-                                    <p className="card-text text-muted mb-0">Last Updated:</p>
-                                    <p className="card-text text-muted">Date: {formatDate(item.updated_at)}</p>
-                                    <p className="card-text text-muted">Time: {formatTime(item.updated_at)}</p>
+        <div className="col-md-12">
+            <h4>My army</h4>
+            <div className="row">
+                {MyArmyBots.map((item) => (
+                    <div key={item.id} className="col-md-4 mb-3">
+                        <div className="card bg-dark text-white" style={{ width: '19rem' }}>
+                            <img src={item.avatar_url} className="card-img h-25" alt={item.name} />
+                            <div className="card-img-overlay position-relative">
+                                <h5 className="card-title">{item.name}</h5>
+                                <p className="card-text position-absolute bottom-0 start-0 end-0 bg-dark text-white p-2">{item.catchphrase}</p>
+                            </div>
+                            <div className="card-footer bg-transparent border-0">
+                                <div className="last-updates">
+                                    <h6>Last Updates</h6>
+                                    <p>Date: {formatDate(item.updated_at)}</p>
+                                    <p>Time: {formatTime(item.updated_at)}</p>
                                 </div>
                             </div>
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </div>
-
-
-        </>
+        </div>
+    </>
+    
+    
     )
 }

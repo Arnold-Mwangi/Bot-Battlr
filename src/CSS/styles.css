@@ -23,6 +23,27 @@ body {
   border-color: white;
 }
 
-.overlay-content{
-  background-color: rgba(0, 0, 0, 0.11);
+.overlay-content {
+  background-color: rgba(0, 0, 0, 0.247);
+}
+
+
+.border-between::before,
+.border-between::after {
+  content: '';
+  display: block;
+  width: 50%;
+  border-top: 1px solid #ccc;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.border-between::before {
+  left: 0;
+}
+
+.border-between::after {
+  right: 0;
 }
