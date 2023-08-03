@@ -1,4 +1,5 @@
 # bot battlr 
+
 This a web appliaction that maintains robots.
 A user can view all the robots in place,
 Auser can discharge a robot from the database
@@ -19,44 +20,17 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-# View of the homepage onload
+#View of the homepage onload
+![Screenshot from 2023-07-31, 00-28-09](https://github.com/Arnold-Mwangi/Bot-Battlr/assets/78974739/883cbc28-74a7-4bee-959a-dc74bb1a54a2)
+
+# The web app allows a user to add a bot to my Army Collection
+
+![Screenshot from 2023-08-01 03-50-47](https://github.com/Arnold-Mwangi/Bot-Battlr/assets/78974739/cf63f391-4a2e-40a2-b765-d1a166e175c6)
 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The web also allows one to discharge a Bot completely from the database
+
+![Screenshot from 2023-07-31 22-16-48](https://github.com/Arnold-Mwangi/Bot-Battlr/assets/78974739/e67a49d6-c987-4fad-ad6f-a4e603df5a72)
 
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# Bot-Battlr
->>>>>>> f815a4ad8c1eb8aa50c0a504d7b9e20c34cc3545
